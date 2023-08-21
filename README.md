@@ -41,6 +41,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 amplify init
 ```
 
+### Add Hosting 
+    
+```bash
+amplify add hosting
+```
+
 ### Build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
 
 ```bash

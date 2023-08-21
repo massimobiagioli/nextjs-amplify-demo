@@ -10,6 +10,14 @@
       "StackName": "amplify-nextjsamplifydemo-dev-95912",
       "StackId": "arn:aws:cloudformation:eu-central-1:755827290206:stack/amplify-nextjsamplifydemo-dev-95912/9e9ca790-3ff8-11ee-a7bd-0a557426b366",
       "AmplifyAppId": "d3q99mhi7v93sn"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3q99mhi7v93sn",
+          "type": "cicd"
+        }
+      }
     }
   }
 }
