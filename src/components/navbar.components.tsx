@@ -3,7 +3,7 @@
 export default function Navbar() {
     return (
         <div>
-            Username: unauthanticated
+           <h3>NavBar</h3>
         </div>
     );
 }

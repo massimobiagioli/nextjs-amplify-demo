@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nextjsamplifydemo-dev-114605-authRole",
+      "UnauthRoleArn": "arn:aws:iam::755827290206:role/amplify-nextjsamplifydemo-dev-114605-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::755827290206:role/amplify-nextjsamplifydemo-dev-114605-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-nextjsamplifydemo-dev-114605-deployment",
+      "UnauthRoleName": "amplify-nextjsamplifydemo-dev-114605-unauthRole",
+      "StackName": "amplify-nextjsamplifydemo-dev-114605",
+      "StackId": "arn:aws:cloudformation:eu-central-1:755827290206:stack/amplify-nextjsamplifydemo-dev-114605/8d3c44b0-4007-11ee-bdb1-02687cb61bd2",
+      "AmplifyAppId": "d1ugmdyoxjeia1"
+    },
+    "categories": {
+      "auth": {
+        "nextjsamplifydemo0b6ee0b2": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1ugmdyoxjeia1",
+          "type": "cicd"
+        }
+      }
+    }
+  }
+}
