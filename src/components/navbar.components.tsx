@@ -1,19 +1,9 @@
 "use client"
 
-import {
-    withAuthenticator,
-    WithAuthenticatorProps,
-} from "@aws-amplify/ui-react";
-
-function Navbar({signOut, user}: WithAuthenticatorProps) {
+export default function Navbar() {
     return (
         <div>
-            <h1>Logged in as {user?.username}.</h1>
-            <div>
-                <button onClick={signOut}>Sign out</button>
-            </div>
+            Username: unauthanticated
         </div>
     );
 }
-
-export default withAuthenticator(Navbar);
