@@ -1,7 +1,4 @@
 import {Auth} from "aws-amplify";
-import awsExports from "@/aws-exports";
-
-Auth.configure({...awsExports, ssr: true});
 
 export type SignupParams = {
     username: string;

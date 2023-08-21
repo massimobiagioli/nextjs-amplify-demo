@@ -1,6 +1,6 @@
 'use server'
 
-import {signUp} from "@/lib/cognito/signUp";
+import {signUp} from "@/lib/cognito";
 
 export async function handleSignUp(formData: FormData) {
     const usernameValue = formData.get('username')
