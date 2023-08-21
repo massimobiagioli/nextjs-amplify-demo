@@ -41,6 +41,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 amplify init
 ```
 
+### Install dependencies
+
+```bash
+npm install aws-amplify @aws-amplify/ui-react
+```
+
 ### Add Hosting 
     
 ```bash

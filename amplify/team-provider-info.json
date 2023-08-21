@@ -17,6 +17,9 @@
           "appId": "d3q99mhi7v93sn",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "nextjsamplifydemo4a3bb64d": {}
       }
     }
   }
