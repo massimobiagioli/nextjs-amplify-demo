@@ -12,14 +12,14 @@
       "AmplifyAppId": "d1ugmdyoxjeia1"
     },
     "categories": {
-      "auth": {
-        "nextjsamplifydemo0b6ee0b2": {}
-      },
       "hosting": {
         "amplifyhosting": {
           "appId": "d1ugmdyoxjeia1",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "nextjsamplifydemoccaab9e1": {}
       }
     }
   }
