@@ -7,6 +7,7 @@ import {AmplifyUser} from "@aws-amplify/ui";
 import {listDevices} from "@/graphql/queries";
 import {Device, ListDevicesQuery} from "@/API";
 import {GraphQLQuery} from "@aws-amplify/api";
+import DeviceCard from "@/components/deviceCard.component";
 
 type ListDevicesProps = {
     user: AmplifyUser | undefined
@@ -27,6 +28,7 @@ export default function ListDevices({ user }: ListDevicesProps) {
                 createdAt: device?.createdAt || '',
                 updatedAt: device?.updatedAt || '',
                 address: device?.address || '',
+                is_active: device?.is_active || false,
                 _version: device?._version || 0,
                 _lastChangedAt: device?._lastChangedAt || 0,
             }
@@ -52,15 +54,7 @@ export default function ListDevices({ user }: ListDevicesProps) {
 
             <div className="mt-2 flex flex-row flex-wrap gap-4">
                 {devices.map((device) => (
-                    <div key={device.id} className="card w-96 bg-blue-50">
-                        <div className="card-body">
-                            <h2 className="card-title">{device.name}</h2>
-                            <p>Address: {device.address}</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-error">Delete</button>
-                            </div>
-                        </div>
-                    </div>
+                    <DeviceCard device={device} key={device.id} />
                 ))}
             </div>
         </div>
