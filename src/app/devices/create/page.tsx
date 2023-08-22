@@ -18,7 +18,15 @@ export default function CreateDevice() {
                     <Navbar user={user} signOut={signOut} />
 
                     <div className="m-4">
-                        <DeviceCreateForm />
+                        <h1 className="text-lg">Create Device</h1>
+
+                        <div className="m-4">
+                            <DeviceCreateForm />
+                        </div>
+
+                        <div className="mt-2">
+                            <a className="link" href="/">Back to Device List</a>
+                        </div>
                     </div>
                 </>
             )}

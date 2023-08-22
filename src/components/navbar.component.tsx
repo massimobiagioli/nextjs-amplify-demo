@@ -1,3 +1,5 @@
+'use client'
+
 import {AmplifyUser, AuthEventData} from "@aws-amplify/ui";
 
 type NavbarProps = {
