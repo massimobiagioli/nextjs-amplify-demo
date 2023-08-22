@@ -1,0 +1,6 @@
+type Device @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  name: String!
+  address: AWSIPAddress!
+  is_active: Boolean
+} 
