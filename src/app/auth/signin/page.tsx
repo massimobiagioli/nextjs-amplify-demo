@@ -1,6 +1,6 @@
 'use client'
 
-import {handleSignIn} from "@/app/auth/signin/actions";
+import {handleSignIn, me} from "@/app/auth/signin/actions";
 
 export default function SignUp() {
     return (
@@ -23,6 +23,7 @@ export default function SignUp() {
                     </div>
                     <div>
                         <button className="btn btn-block btn-primary">Confirm</button>
+                        <button formAction={me} className="btn btn-block btn-secondary">Me</button>
                     </div>
                 </form>
             </div>

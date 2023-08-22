@@ -1,6 +1,7 @@
 'use server'
 
 import {signIn} from "@/lib/cognito";
+import {Auth} from "aws-amplify";
 
 export async function handleSignIn(formData: FormData) {
     const usernameValue = formData.get('username')
@@ -19,4 +20,9 @@ export async function handleSignIn(formData: FormData) {
     if (!signInResult) {
         console.error('Failed to sign in')
     }
+}
+
+export async function me() {
+    const user = await Auth.currentAuthenticatedUser()
+    console.log(user)
 }

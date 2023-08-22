@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from "@/components/navbar.components";
 import awsExports from "@/aws-exports";
-import {Amplify, Auth} from "aws-amplify";
+import {Amplify} from "aws-amplify";
 
 const inter = Inter({ subsets: ['latin'] })
 
