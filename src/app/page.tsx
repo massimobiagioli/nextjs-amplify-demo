@@ -16,11 +16,12 @@ export default function Home() {
                 <>
                     <Navbar user={user} signOut={signOut} />
 
-                    <div className="m-4">
-                        <h1 className="text-lg">NextJs Amplify Demo</h1>
-
-                        <div className="mt-2">
-                            <a className="link" href="/devices">List Devices</a>
+                    <div className="hero min-h-screen bg-base-200">
+                        <div className="hero-content text-left">
+                            <div className="max-w-md">
+                                <h1 className="text-5xl font-bold">Welcome to Demo</h1>
+                                <a className="btn btn-neutral mt-8" href="/devices">View My Devices</a>
+                            </div>
                         </div>
                     </div>
                 </>
