@@ -1,5 +1,3 @@
-'use client'
-
 import {AmplifyUser, AuthEventData} from "@aws-amplify/ui";
 
 type NavbarProps = {
@@ -11,10 +9,10 @@ export default function Navbar({ user, signOut }: NavbarProps) {
     return (
         <div className="navbar bg-neutral text-neutral-content">
             <div className="flex-1">
-                <a className="normal-case text-xl" href="/">NextJs Amplify Demo</a>
+                <a className="normal-case text-xl">NextJs Amplify Demo</a>
             </div>
             <div className="flex-none">
-                <span className="text-sm mr-4"><strong>{user?.username}</strong> ({user?.attributes?.email})</span>
+                <span className="text-sm mr-2">{user?.username} ({user?.attributes?.email}</span>
                 <a className="btn btn-sm" onClick={signOut}>Sign Out</a>
             </div>
         </div>

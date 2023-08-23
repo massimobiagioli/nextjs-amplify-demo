@@ -4,15 +4,15 @@ import {Authenticator} from "@aws-amplify/ui-react";
 import awsExports from "@/aws-exports";
 import {Amplify, Auth, AuthModeStrategyType} from "aws-amplify";
 import '@aws-amplify/ui-react/styles.css';
-import Navbar from "@/components/navbar.component";
 import {DeviceCreateForm} from "@/ui-components";
+import Navbar from "@/components/navbar.component";
 
 Amplify.configure({...awsExports, ssr: true});
 Auth.configure({...awsExports, ssr: true, DataStore: {authModeStrategyType: AuthModeStrategyType.DEFAULT}})
 
 export default function CreateDevice() {
     function handleSuccess() {
-        window.location.href = "/"
+        window.location.href = "/devices"
     }
 
     return (

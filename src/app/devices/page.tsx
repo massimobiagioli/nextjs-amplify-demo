@@ -1,24 +1,34 @@
-'use client'
-
-import {Authenticator} from "@aws-amplify/ui-react";
 import awsExports from "@/aws-exports";
-import {Amplify, Auth} from "aws-amplify";
-import '@aws-amplify/ui-react/styles.css';
-import Navbar from "@/components/navbar.component";
+import {Amplify, Auth, withSSRContext} from "aws-amplify";
+import {headers} from "next/headers";
+import {listDevices} from "@/graphql/queries";
+import {redirect} from "next/navigation";
+import {Device} from "@/API";
 import ListDevices from "@/components/listDevices.component";
 
 Amplify.configure({...awsExports, ssr: true});
 Auth.configure({...awsExports, ssr: true});
 
-export default function Home() {
+async function fetchPosts() {
+    try {
+        const req = {
+            headers: {
+                cookie: headers().get('cookie'),
+            },
+        };
+        const SSR = withSSRContext({req})
+        const {data} = await SSR.API.graphql({query: listDevices})
+
+        return data.listDevices.items as Device[];
+    } catch (e) {
+        redirect("/");
+    }
+}
+
+export default async function Devices() {
+    const devices = await fetchPosts();
+
     return (
-        <Authenticator>
-            {({signOut, user}) => (
-                <div>
-                    <Navbar user={user} signOut={signOut} />
-                    <ListDevices user={user} />
-                </div>
-            )}
-        </Authenticator>
+        <ListDevices devices={devices} />
     );
 }

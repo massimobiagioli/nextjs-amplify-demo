@@ -2,21 +2,21 @@
 
 import {Authenticator} from "@aws-amplify/ui-react";
 import awsExports from "@/aws-exports";
-import {Amplify, Auth, AuthModeStrategyType, DataStore} from "aws-amplify";
+import {Amplify, Auth} from "aws-amplify";
 import '@aws-amplify/ui-react/styles.css';
-import Navbar from "@/components/navbar.component";
 import {DeviceUpdateForm} from "@/ui-components";
 import {useParams} from "next/navigation";
+import Navbar from "@/components/navbar.component";
 
 Amplify.configure({...awsExports, ssr: true});
-Auth.configure({...awsExports, ssr: true, DataStore: {authModeStrategyType: AuthModeStrategyType.DEFAULT}})
+Auth.configure({...awsExports, ssr: true})
 
 export default function UpdateDevice() {
     const params = useParams()
     const id = params.id as string
 
     function handleSuccess() {
-        window.location.href = "/"
+        window.location.href = "/devices"
     }
 
     return (
