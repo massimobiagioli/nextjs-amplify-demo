@@ -139,7 +139,12 @@ export default function DeviceUpdateForm(props) {
       {...rest}
     >
       <TextField
-        label="Name"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Name</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={name}
@@ -165,7 +170,12 @@ export default function DeviceUpdateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Address"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Address</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={address}
