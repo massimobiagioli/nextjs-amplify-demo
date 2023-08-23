@@ -1,8 +1,12 @@
 'use client'
 
 import {Device} from "@/API";
-import {API} from "aws-amplify";
+import {Amplify, API, Auth} from "aws-amplify";
 import {deleteDevice} from "@/graphql/mutations";
+import awsExports from "@/aws-exports";
+
+Amplify.configure({ ...awsExports, ssr: true });
+Auth.configure({ ...awsExports, ssr: true });
 
 type DeviceCardProps = {
     device: Device
@@ -12,7 +16,16 @@ export default function DeviceCard({ device }: DeviceCardProps) {
     const deviceLink = `/devices/${device.id}`
 
     async function handleDelete() {
-        API.graphql({query: deleteDevice, variables: {input: {id: device.id}}})
+        const result = await API.graphql({
+            query: deleteDevice,
+            variables: {
+                input: {
+                    id: device.id,
+                    _version: device._version
+                }
+            }
+        })
+        window.location.reload()
     }
 
     return (

@@ -16,11 +16,15 @@ export default function ListDevices({ devices }: ListDevicesProps) {
                 <a className="link" href="/src/app/devices/create">Create Device</a>
             </div>
 
-            <div className="mt-2 flex flex-row flex-wrap gap-4">
-                {devices.map((device) => (
-                    <DeviceCard device={device} key={device.id} />
-                ))}
-            </div>
+            {devices.length == 0 ? (
+                <div className="text-sm m-4">No devices found.</div>
+            ) : (
+                <div className="mt-2 flex flex-row flex-wrap gap-4">
+                    {devices.map((device) => (
+                        <DeviceCard device={device} key={device.id} />
+                    ))}
+                </div>
+            )}
         </div>
     )
 }
