@@ -17,6 +17,7 @@ async function fetchDevices(): Promise<Device[]> {
             },
         };
         const SSR = withSSRContext({req})
+
         const { data } = await SSR.API.graphql({
             query: listDevices,
             variables: {

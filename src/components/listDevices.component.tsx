@@ -13,7 +13,7 @@ export default function ListDevices({ devices }: ListDevicesProps) {
             <h1 className="text-lg">My Devices</h1>
 
             <div className="mt-2">
-                <a className="link" href="/src/app/devices/create">Create Device</a>
+                <a className="link" href="/devices/create">Create Device</a>
             </div>
 
             {devices.length == 0 ? (
