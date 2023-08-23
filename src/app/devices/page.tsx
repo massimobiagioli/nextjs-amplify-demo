@@ -1,5 +1,5 @@
 import awsExports from "@/aws-exports";
-import {Amplify, API, Auth, withSSRContext} from "aws-amplify";
+import {Amplify, Auth, withSSRContext} from "aws-amplify";
 import {headers} from "next/headers";
 import {listDevices} from "@/graphql/queries";
 import {redirect} from "next/navigation";
@@ -9,7 +9,7 @@ import ListDevices from "@/components/listDevices.component";
 Amplify.configure({...awsExports, ssr: true});
 Auth.configure({...awsExports, ssr: true});
 
-async function fetchPosts() {
+async function fetchDevices(): Promise<Device[]> {
     try {
         const req = {
             headers: {
@@ -30,13 +30,12 @@ async function fetchPosts() {
 
         return data.listDevices.items as Device[];
     } catch (e) {
-        console.error(e)
         redirect("/");
     }
 }
 
 export default async function Devices() {
-    const devices = await fetchPosts();
+    const devices = await fetchDevices();
 
     return (
         <ListDevices devices={devices} />
