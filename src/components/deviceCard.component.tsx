@@ -1,6 +1,8 @@
 'use client'
 
 import {Device} from "@/API";
+import {API} from "aws-amplify";
+import {deleteDevice} from "@/graphql/mutations";
 
 type DeviceCardProps = {
     device: Device
@@ -8,6 +10,10 @@ type DeviceCardProps = {
 
 export default function DeviceCard({ device }: DeviceCardProps) {
     const deviceLink = `/devices/${device.id}`
+
+    async function handleDelete() {
+        API.graphql({query: deleteDevice, variables: {input: {id: device.id}}})
+    }
 
     return (
         <div className="card w-96 bg-blue-50">
@@ -20,7 +26,7 @@ export default function DeviceCard({ device }: DeviceCardProps) {
                     <div className="badge badge-error">inactive</div>
                 )}
                 <div className="card-actions justify-end">
-                    <button className="btn btn-error">Delete</button>
+                    <button className="btn btn-error" onClick={handleDelete}>Delete</button>
                 </div>
             </div>
         </div>

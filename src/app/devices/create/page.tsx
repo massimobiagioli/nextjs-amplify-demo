@@ -29,7 +29,7 @@ export default function CreateDevice() {
                         </div>
 
                         <div className="mt-2">
-                            <a className="link" href="/">Back to Device List</a>
+                            <a className="link" href="/devices">Back to Device List</a>
                         </div>
                     </div>
                 </>
